@@ -111,7 +111,6 @@ def user_signup_complete():
 
 
     if not blank(email):
-        email_error = blank_email_error
         password = ''
         verify_password = ''
     else:
@@ -119,21 +118,18 @@ def user_signup_complete():
             email_error = "Email should contain the @ symbol and a period"
             password = ''
             verify_password = ''
-            #password_error = reenter_password
-            #verify_password_error = reenter_password
+
         elif not email_period_verify(email):
             email_error = "Email must contain a period"
             password = ''
             verify_password = ''
-            #password_error = reenter_password
-            #verify_password_error = reenter_password
+
         else:
             if " " in email:
                 email_error = "Email " + spaces_error
                 password = ''
                 verify_password = ''
-                #password_error = reenter_password
-                #verify_password_error = reenter_password
+
 
 
     if not username_error and not password_error and not verify_password_error and not email_error:
